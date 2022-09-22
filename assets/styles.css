@@ -347,15 +347,15 @@ h3 {
 }
 
 .wales {
-    background-image: url(img/Haybluff.gif);
+    background-image: url(../img/Haybluff.gif);
 }
 
 .france {
-    background-image: url(img/samoens2008.jpg);
+    background-image: url(../img/samoens2008.jpg);
 }
 
 .morocco {
-    background-image: url(img/5secOliverAguergour.gif);
+    background-image: url(../img/5secOliverAguergour.gif);
 }
 
 .tile:hover {
@@ -402,7 +402,7 @@ h3 {
 .tandem {
     height: 100vh;
     width: 100%;
-    background-image: url(img/tandem.jpeg);
+    background-image: url(../img/tandem.jpeg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -454,15 +454,15 @@ h3 {
 }
 
 .row1 {
-    background-image: url(img/snowyhaybluff.jpg);
+    background-image: url(../img/snowyhaybluff.jpg);
 }
 
 .row2 {
-    background-image: url(img/qualifiedCPs.jpg);
+    background-image: url(../img/qualifiedCPs.jpg);
 }
 
 .row3 {
-    background-image: url(img/tandemrhossili.jpg);
+    background-image: url(../img/tandemrhossili.jpg);
 }
 
 .row p {
