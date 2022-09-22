@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&family=Quicksand:wght@300;400;500;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 :root {
     /* https://coolors.co/palette/000000-14213d-fca311-e5e5e5-ffffff */
     --primary: #FCA311;
@@ -18,15 +20,13 @@ html {
     overflow-x: hidden;
 }
 
-body {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
+body { font-family: 'Quicksand', 'Roboto', sans-serif; }
 
 nav {
     position: fixed;
     display: hidden;
     top: 0;
-    height: 60px;
+    height: 90px;
     width: 100%;
     background-color: var(--light);
     z-index: 9;
@@ -38,8 +38,9 @@ nav {
 
 nav ul {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
     justify-content: center;
+    align-items: baseline;
     margin-top: 0.5em;
 }
 
@@ -65,6 +66,7 @@ nav ul li a:hover {
 
 .burger {
     position: fixed;
+    display: inline-block;
     top: 1em;
     right: 3%;
     z-index: 10;
@@ -103,13 +105,15 @@ nav ul li a:hover {
     transform: scale(1);
 }
 
-#logo {
+#logo-wrapper {
     position: absolute;
     top: 20px;
     left: 20px;
     margin: 10px;
+
     z-index: 6;
 }
+#logo {width: 150px; object-fit: cover;}
 
 .hero {
     position: relative;
@@ -130,14 +134,14 @@ nav ul li a:hover {
 .hero-title {
     font-weight: 700;
     font-size: 1.4rem;
-    position: absolute;
-    top: 70vh;
-    left: 50%;
-    transform: translateX(-50%);
+    position: relative;
+    top: 62vh;
     text-align: center;
     background-color: white;
     border: 2px solid var(--primary);
     padding: 0.8rem 1rem;
+    margin: 0 auto;
+    max-width: 50%;
     border-radius: 20px;
     box-shadow: rgba(252, 163, 17, 0.4) 0px 5px, rgba(252, 163, 17, 0.3) 0px 10px, rgba(252, 163, 17, 0.2) 0px 15px, rgba(252, 163, 17, 0.1) 0px 20px, rgba(252, 163, 17, 0.05) 0px 25px;
 }
@@ -145,29 +149,29 @@ nav ul li a:hover {
 .hero-content {
     display: flex;
     flex-flow: row;
+    gap: 20px;
     justify-content: space-evenly;
     align-items: center;
 
     width: 100%;
-    height: 25vh;
+    height: 30vh;
 
     position: relative;
-    top: 75vh;
+    top: 58vh;
 }
 
 .hero-description {
     font-weight: 100;
-    font-size: 1.2rem;
-    line-height: 1.3em;
-    max-width: 45%;
+    font-size: 1rem;
+    line-height: 1.5em;
+    max-width: 40%;
 }
 
 .hero-btn {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-around;
-
-    max-width: 45%;
+    justify-content: space-evenly;
+    max-width: 40%;
 }
 
 
@@ -175,7 +179,7 @@ nav ul li a:hover {
     z-index: 0;
     position: absolute;
     top: 0;
-    height: 75vh;
+    height: 67vh;
     width: 100%;
     object-fit: cover;
     object-position: 30% 90%;
@@ -188,7 +192,7 @@ nav ul li a:hover {
     align-items: center;
 
     position: absolute;
-    top: 20vh;
+    top: 25vh;
 
     height: 50px;
     width: 20px;
@@ -318,9 +322,9 @@ h3 {
 }
 
 .courses article {
-    padding: 50px 10px 50px 10px;
+    padding: 10px 10px 50px 10px;
     line-height: 1.2;
-    width: 75%;
+    width: 80%;
     min-width: 250px;
 }
 
@@ -365,6 +369,7 @@ h3 {
 
 .tile a {
     text-decoration: none;
+    height: 75vh;
 }
 
 .tile-content {
@@ -399,6 +404,20 @@ h3 {
     opacity: 1;
 }
 
+/* .tile-bg {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: -75vh;
+    background-color: red;
+    opacity: 0.2;
+    transition: opacity 0.4ms ease-in-out;
+}
+
+.tile:hover .tile-bg{
+    opacity: 0.6;
+} */
+
 .tandem {
     height: 100vh;
     width: 100%;
@@ -431,7 +450,7 @@ h3 {
     margin-top: 30px;
 }
 
-.about h3 {
+h3 {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -474,7 +493,6 @@ h3 {
     height: 70vh;
     width: 100vw;
     min-height: 400px;
-    position: relative;
     margin: 50px 20px;
 }
 
@@ -569,7 +587,17 @@ iframe {
     display: none;
 }
 
-.footer {
-    height: 20vh;
+footer {
     width: 100%;
+    padding: 20px 10px;
+    background-color: var(--primary);
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    gap: 50px;
 } 
+
+footer ul {
+    list-style: none;
+}
