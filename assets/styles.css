@@ -20,15 +20,17 @@ html {
     overflow-x: hidden;
 }
 
-body { font-family: 'Quicksand', 'Roboto', sans-serif; }
+body { font-family: 'Quicksand', 'Roboto', sans-serif; 
+    width: 100vw;
+    overflow: hidden;
+}
 
 nav {
     position: fixed;
     display: hidden;
-    top: 0;
-    height: 90px;
-    width: 100%;
-    background-color: var(--light);
+    top: 0.70rem;
+    height: 50px;
+    width: 100vw;
     z-index: 9;
 
     transition: opacity 0.3s ease-out;
@@ -41,7 +43,9 @@ nav ul {
     flex-flow: row wrap;
     justify-content: center;
     align-items: baseline;
-    margin-top: 0.5em;
+    padding: 0.5em 3em;
+    background-color: var(--light);
+    opacity: 0.9;
 }
 
 nav ul li {
@@ -57,7 +61,6 @@ nav ul li a {
 
 nav ul li a:hover {
     cursor: pointer;
-    color: var(--primary);
 }
 
 #toggle {
@@ -67,8 +70,8 @@ nav ul li a:hover {
 .burger {
     position: fixed;
     display: inline-block;
-    top: 1em;
-    right: 3%;
+    top: 1.5em;
+    right: 3vw;
     z-index: 10;
     height: 30px;
     width: 1.5em;
@@ -162,7 +165,7 @@ nav ul li a:hover {
 
 .hero-description {
     font-weight: 100;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 1.5em;
     max-width: 40%;
 }
@@ -192,7 +195,7 @@ nav ul li a:hover {
     align-items: center;
 
     position: absolute;
-    top: 25vh;
+    top: 27vh;
 
     height: 50px;
     width: 20px;
@@ -236,8 +239,8 @@ nav ul li a:hover {
     border-radius: 25px;
     padding: 10px 15px;
     margin: 10px 8px;
+    font-size: 0.75rem;
     text-transform: uppercase;
-    font-weight: 700;
     box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px;
     transition: all 0.4ms ease-in-out;
 }
@@ -322,10 +325,15 @@ h3 {
 }
 
 .courses article {
-    padding: 10px 10px 50px 10px;
+    padding: 10px 10px auto 10px;
     line-height: 1.2;
     width: 80%;
     min-width: 250px;
+}
+
+#click {
+    margin: 20px auto;
+    object-fit: contain;
 }
 
 .courses div:first-of-type h3 {
@@ -398,10 +406,13 @@ h3 {
     grid-area: 2 / 2 / 3 / 3;
     text-align: center;
     transition: opacity 0.4s;
+    background-color: var(--dark);
+    padding: 5px;
+    border-radius: 3px;
 }
 
 .tile:hover span {
-    opacity: 1;
+    opacity: 0.6;
 }
 
 /* .tile-bg {
@@ -433,10 +444,8 @@ h3 {
 }
 
 .tandem h3 {
-    font-size: xx-large;
-    font-weight: 800;
-    margin-bottom: 30px;
     color: var(--light);
+    text-align: center;
 }
 
 .tandem button:last-of-type {
@@ -450,7 +459,7 @@ h3 {
     margin-top: 30px;
 }
 
-h3 {
+.about h3, .features h3 {
     width: 75%;
     margin-left: auto;
     margin-right: auto;
@@ -593,11 +602,53 @@ footer {
     background-color: var(--primary);
 
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row;
     justify-content: space-around;
-    gap: 50px;
+    gap: 20px;
 } 
 
 footer ul {
     list-style: none;
+}
+
+.translate-left, .translate-right {
+    opacity: 0;
+}
+
+@keyframes translate-right {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes translate-left {
+    from {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+    .hero img {
+        height: 80vh;
+    }
+
+    .hero-title {top: 77vh;}
+
+    .hero-content {top:70vh;}
+
+    .hero-description {font-size: 1rem; line-height: 1.5em;}
+
+    .arrow-wp {top:16vh;}
+
+    .btn-primary, .btn-secondary {font-size: 1rem;}
 }
